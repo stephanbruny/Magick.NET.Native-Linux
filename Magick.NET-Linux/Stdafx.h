@@ -35,6 +35,8 @@
 
 #define MAGICK_NET_EXPORT __attribute__((visibility("default")))
 
+// GCC does not support compile time linking
+
 //#define MAGICK_NET_STRINGIFY(s) #s
 //#if defined(_DEBUG)
 //#define MAGICK_NET_LINK_LIB(name) \

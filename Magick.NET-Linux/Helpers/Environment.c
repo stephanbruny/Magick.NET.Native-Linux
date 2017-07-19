@@ -12,8 +12,10 @@
 
 #include "Stdafx.h"
 #include "Environment.h"
+#include <stdlib.h>
 
 MAGICK_NET_EXPORT void Environment_SetEnv(const char *name, const char *value)
 {
-  putenv(name, value);
+  setenv(name, value, 1); // overwriting variable, is this the desired behavior?
+  // TODO: Handle error: EINVAL, ENOMEM (silent fail would be evil)
 }
